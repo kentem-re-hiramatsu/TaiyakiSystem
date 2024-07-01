@@ -18,12 +18,12 @@ namespace TaiyakiSystem
             _taiyakiMana = taiyakiMana;
         }
 
-        private void CancelButton_Click(object sender, System.EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void OrderForm_Load(object sender, System.EventArgs e)
+        private void OrderForm_Load(object sender, EventArgs e)
         {
             DefaultRadioButton.Tag = 0;
             CustardRadioButton.Tag = 1;
@@ -32,7 +32,7 @@ namespace TaiyakiSystem
             _size = TaiyakiSizeEnum.大;
         }
 
-        private void BuyButton_Click(object sender, System.EventArgs e)
+        private void BuyButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,32 +47,32 @@ namespace TaiyakiSystem
             }
         }
 
-        private void DefaultRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void DefaultRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _taiyakiIndex = (int)DefaultRadioButton.Tag;
         }
 
-        private void CustardRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void CustardRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _taiyakiIndex = (int)CustardRadioButton.Tag;
         }
 
-        private void DeluxeRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void DeluxeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _taiyakiIndex = (int)DeluxeRadioButton.Tag;
         }
 
-        private void BigRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void BigRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _size = TaiyakiSizeEnum.大;
         }
 
-        private void MiddleRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void MiddleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _size = TaiyakiSizeEnum.中;
         }
 
-        private void SmallRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        private void SmallRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             _size = TaiyakiSizeEnum.小;
         }

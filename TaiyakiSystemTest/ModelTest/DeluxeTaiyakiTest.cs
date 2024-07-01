@@ -13,6 +13,7 @@ namespace TaiyakiSystemTest.ModelTest
         {
             var bigTaiyaki = new DeluxeTaiyaki(TaiyakiSizeEnum.大);
 
+            //大以外を選択した場合エラーを返す
             Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeEnum.小));
             Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeEnum.中));
 

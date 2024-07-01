@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaiyakiSystem.Cores.Enums;
-using TaiyakiSystem.Cores.Models;
+using TaiyakiSystem.Cores.Managers;
 
 namespace TaiyakiSystemTest.ModelTest
 {

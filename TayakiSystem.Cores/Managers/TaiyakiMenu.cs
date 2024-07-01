@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using TaiyakiSystem.Cores.Enums;
+using TaiyakiSystem.Cores.Models;
 
-namespace TaiyakiSystem.Cores.Models
+namespace TaiyakiSystem.Cores.Managers
 {
     public class TaiyakiMenu
     {

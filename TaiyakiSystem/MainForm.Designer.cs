@@ -55,6 +55,7 @@
             this.TaiyakiListView.TabIndex = 0;
             this.TaiyakiListView.UseCompatibleStateImageBehavior = false;
             this.TaiyakiListView.View = System.Windows.Forms.View.Details;
+            this.TaiyakiListView.SelectedIndexChanged += new System.EventHandler(this.TaiyakiListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -85,24 +86,29 @@
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "追加";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // RemoveButton
             // 
+            this.RemoveButton.Enabled = false;
             this.RemoveButton.Location = new System.Drawing.Point(394, 84);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(82, 33);
             this.RemoveButton.TabIndex = 2;
             this.RemoveButton.Text = "削除";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // ChangeButton
             // 
+            this.ChangeButton.Enabled = false;
             this.ChangeButton.Location = new System.Drawing.Point(394, 123);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(82, 33);
             this.ChangeButton.TabIndex = 3;
             this.ChangeButton.Text = "編集";
             this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // CloseButton
             // 
@@ -112,6 +118,7 @@
             this.CloseButton.TabIndex = 4;
             this.CloseButton.Text = "終了";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label1
             // 

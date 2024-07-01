@@ -1,6 +1,5 @@
 ﻿using System;
 using TaiyakiSystem.Cores.Enums;
-using TayakiSystem.Cores;
 
 namespace TaiyakiSystem.Cores.Models
 {

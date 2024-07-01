@@ -9,7 +9,6 @@ namespace TaiyakiSystem.Cores.Models
         public TaiyakiContentEnum Content { get; protected set; }
 
         public abstract BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size);
-
         public abstract int GetSubTotal();
     }
 }

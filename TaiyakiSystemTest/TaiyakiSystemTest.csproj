@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagerTest\TaiyakiManagerTest.cs" />
     <Compile Include="ModelTest\CustardTaiyakiTest.cs" />
     <Compile Include="ModelTest\DefaultTaiyakiTest.cs" />
     <Compile Include="ModelTest\DeluxeTaiyakiTest.cs" />
@@ -58,9 +59,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TayakiSystem.Cores\TayakiSystem.Cores.csproj">
+    <ProjectReference Include="..\TayakiSystem.Cores\TaiyakiSystem.Cores.csproj">
       <Project>{b428da64-6ac5-4c73-add7-7b046bbd9ec2}</Project>
-      <Name>TayakiSystem.Cores</Name>
+      <Name>TaiyakiSystem.Cores</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

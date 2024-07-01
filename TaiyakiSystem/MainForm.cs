@@ -15,12 +15,13 @@ namespace TaiyakiSystem
 
         private void UpdateScreen()
         {
+            TaiyakiListView.Items.Clear();
             foreach (var taiyaki in _taiyakiMana.TaiyakiOrderList)
             {
                 TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), taiyaki.Content.ToString(),
                                                                           taiyaki.Size.ToString(), taiyaki.GetSubTotal().ToString() }));
             }
-            PriceLabel.Text = _taiyakiMana.GetTotalPrice().ToString("円");
+            PriceLabel.Text = $"{_taiyakiMana.GetTotalPrice().ToString("#,0円")}";
         }
 
         private void SelectedIndex()
@@ -44,7 +45,7 @@ namespace TaiyakiSystem
 
         private void AddButton_Click(object sender, System.EventArgs e)
         {
-            if (new SubForm(_taiyakiMana, true).ShowDialog() == DialogResult.OK)
+            if (new OrderForm(_taiyakiMana).ShowDialog() == DialogResult.OK)
             {
                 UpdateScreen();
             }
@@ -54,13 +55,13 @@ namespace TaiyakiSystem
         private void RemoveButton_Click(object sender, System.EventArgs e)
         {
             _taiyakiMana.Remove(_selectedIndex);
-
+            UpdateScreen();
             RemoveAndChangeButtonActiveStateChange();
         }
 
         private void ChangeButton_Click(object sender, System.EventArgs e)
         {
-            if (new SubForm(_taiyakiMana, false).ShowDialog() == DialogResult.OK)
+            if (new OrderForm(_taiyakiMana).ShowDialog() == DialogResult.OK)
             {
                 UpdateScreen();
             }
@@ -70,6 +71,7 @@ namespace TaiyakiSystem
         private void TaiyakiListView_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             SelectedIndex();
+            RemoveAndChangeButtonActiveStateChange();
         }
     }
 }

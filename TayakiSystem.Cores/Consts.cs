@@ -1,4 +1,4 @@
-﻿namespace TayakiSystem.Cores
+﻿namespace TaiyakiSystem.Cores
 {
     public class Consts
     {

@@ -61,7 +61,7 @@ namespace TaiyakiSystem
 
         private void ChangeButton_Click(object sender, System.EventArgs e)
         {
-            if (new OrderForm(_taiyakiMana).ShowDialog() == DialogResult.OK)
+            if (new ChangeForm(_taiyakiMana, _selectedIndex).ShowDialog() == DialogResult.OK)
             {
                 UpdateScreen();
             }

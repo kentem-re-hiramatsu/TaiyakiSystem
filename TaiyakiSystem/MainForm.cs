@@ -26,7 +26,7 @@ namespace TaiyakiSystem
                 }
                 else
                 {
-                    TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), $"{((DeluxeTaiyaki)taiyaki).AddingContent}と{taiyaki.Content}",
+                    TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), $"{((DeluxeTaiyaki)taiyaki).DeluxeTaiyakiContent}と{taiyaki.Content}",
                                                                           taiyaki.Size.ToString(), taiyaki.GetSubTotal().ToString() }));
                 }
             }

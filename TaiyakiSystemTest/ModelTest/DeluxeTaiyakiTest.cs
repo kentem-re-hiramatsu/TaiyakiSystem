@@ -19,7 +19,7 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiSizeEnum.大, bigTaiyaki.Size);
             Assert.AreEqual(TaiyakiEnum.デラックスたい焼き, bigTaiyaki.Name);
             Assert.AreEqual(TaiyakiContentEnum.カスタード, bigTaiyaki.Content);
-            Assert.AreEqual(TaiyakiContentEnum.生クリーム, bigTaiyaki.AddingContent);
+            Assert.AreEqual(TaiyakiContentEnum.生クリーム, bigTaiyaki.DeluxeTaiyakiContent);
             Assert.AreEqual(300, bigTaiyaki.GetSubTotal());
         }
 

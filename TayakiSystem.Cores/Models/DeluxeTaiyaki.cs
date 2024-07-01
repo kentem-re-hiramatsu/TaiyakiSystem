@@ -5,7 +5,7 @@ namespace TaiyakiSystem.Cores.Models
 {
     public class DeluxeTaiyaki : BaseTaiyaki
     {
-        public TaiyakiContentEnum AddingContent { get; }
+        public TaiyakiContentEnum DeluxeTaiyakiContent { get { return TaiyakiContentEnum.生クリーム; } }
 
         public DeluxeTaiyaki(TaiyakiSizeEnum size)
         {
@@ -13,7 +13,6 @@ namespace TaiyakiSystem.Cores.Models
             {
                 Name = TaiyakiEnum.デラックスたい焼き;
                 Content = TaiyakiContentEnum.カスタード;
-                AddingContent = TaiyakiContentEnum.生クリーム;
                 Size = size;
             }
             else

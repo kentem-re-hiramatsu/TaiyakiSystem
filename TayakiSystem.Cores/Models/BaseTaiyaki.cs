@@ -1,4 +1,5 @@
 ﻿using TaiyakiSystem.Cores.Enums;
+
 namespace TaiyakiSystem.Cores.Models
 {
     public abstract class BaseTaiyaki

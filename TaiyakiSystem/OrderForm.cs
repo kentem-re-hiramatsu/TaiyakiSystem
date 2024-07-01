@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
-using TaiyakiSystem.Cores.Models;
 
 namespace TaiyakiSystem
 {

@@ -53,6 +53,7 @@
     <Compile Include="ModelTest\CustardTaiyakiTest.cs" />
     <Compile Include="ModelTest\DefaultTaiyakiTest.cs" />
     <Compile Include="ModelTest\DeluxeTaiyakiTest.cs" />
+    <Compile Include="ModelTest\TaiyakiMenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

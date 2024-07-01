@@ -22,5 +22,14 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiContentEnum.生クリーム, bigTaiyaki.AddingContent);
             Assert.AreEqual(300, bigTaiyaki.GetSubTotal());
         }
+
+        [TestMethod]
+        public void GetCloneTaiyakiTest()
+        {
+            var taiyakiClone = new DeluxeTaiyaki().GetCloneTaiyaki(TaiyakiSizeEnum.大);
+
+            Assert.AreEqual(TaiyakiEnum.デラックスたい焼き, taiyakiClone.Name);
+            Assert.AreEqual(TaiyakiSizeEnum.大, taiyakiClone.Size);
+        }
     }
 }

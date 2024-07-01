@@ -30,5 +30,14 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(200, middleTaiyaki.GetSubTotal());
             Assert.AreEqual(250, bigTaiyaki.GetSubTotal());
         }
+
+        [TestMethod]
+        public void GetCloneTaiyakiTest()
+        {
+            var taiyakiClone = new CustardTaiyaki().GetCloneTaiyaki(TaiyakiSizeEnum.中);
+
+            Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, taiyakiClone.Name);
+            Assert.AreEqual(TaiyakiSizeEnum.中, taiyakiClone.Size);
+        }
     }
 }

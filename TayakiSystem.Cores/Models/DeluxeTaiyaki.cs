@@ -23,14 +23,8 @@ namespace TaiyakiSystem.Cores.Models
 
         public DeluxeTaiyaki() { }
 
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size)
-        {
-            return new DeluxeTaiyaki(size);
-        }
+        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size) => new DeluxeTaiyaki(size);
 
-        public override int GetSubTotal()
-        {
-            return (int)Name;
-        }
+        public override int GetSubTotal() => (int)Name;
     }
 }

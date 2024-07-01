@@ -13,9 +13,6 @@ namespace TaiyakiSystem.Cores.Managers
             new DeluxeTaiyaki()
         };
 
-        public BaseTaiyaki GetTaiyaki(int index, TaiyakiSizeEnum size)
-        {
-            return _taiyakiMenuList[index].GetCloneTaiyaki(size);
-        }
+        public BaseTaiyaki GetTaiyaki(int index, TaiyakiSizeEnum size) => _taiyakiMenuList[index].GetCloneTaiyaki(size);
     }
 }

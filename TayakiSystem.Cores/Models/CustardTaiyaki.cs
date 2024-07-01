@@ -13,14 +13,8 @@ namespace TaiyakiSystem.Cores.Models
 
         public CustardTaiyaki() { }
 
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size)
-        {
-            return new CustardTaiyaki(size);
-        }
+        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size) => new CustardTaiyaki(size);
 
-        public override int GetSubTotal()
-        {
-            return (int)Name + (int)Size;
-        }
+        public override int GetSubTotal() => (int)Name + (int)Size;
     }
 }

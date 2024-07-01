@@ -11,20 +11,11 @@ namespace TaiyakiSystem.Cores.Managers
         private List<BaseTaiyaki> _taiyakiOrderList = new List<BaseTaiyaki>();
         public IReadOnlyCollection<BaseTaiyaki> TaiyakiOrderList { get { return _taiyakiOrderList; } }
 
-        public void Add(BaseTaiyaki taiyaki)
-        {
-            _taiyakiOrderList.Add(taiyaki);
-        }
+        public void Add(BaseTaiyaki taiyaki) => _taiyakiOrderList.Add(taiyaki);
 
-        public BaseTaiyaki GetTaiyakiOrder(int index)
-        {
-            return _taiyakiOrderList[index];
-        }
+        public BaseTaiyaki GetTaiyakiOrder(int index) => _taiyakiOrderList[index];
 
-        public int GetTotalPrice()
-        {
-            return _taiyakiOrderList.Sum(x => x.GetSubTotal());
-        }
+        public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetSubTotal());
 
         public void ChangeOrder(int index, TaiyakiSizeEnum size)
         {
@@ -33,9 +24,6 @@ namespace TaiyakiSystem.Cores.Managers
             else
                 throw new Exception(Consts.BIG_SIZE_ONLY_ERROR_MESSAGE);
         }
-        public void Remove(int index)
-        {
-            _taiyakiOrderList.RemoveAt(index);
-        }
+        public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
     }
 }

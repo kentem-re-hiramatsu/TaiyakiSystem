@@ -48,6 +48,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.TaiyakiListView.FullRowSelect = true;
             this.TaiyakiListView.HideSelection = false;
             this.TaiyakiListView.Location = new System.Drawing.Point(12, 45);
             this.TaiyakiListView.Name = "TaiyakiListView";

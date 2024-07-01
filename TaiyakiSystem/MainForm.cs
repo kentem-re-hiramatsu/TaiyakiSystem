@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using TaiyakiSystem.Cores.Managers;
+using TaiyakiSystem.Cores.Models;
 
 namespace TaiyakiSystem
 {
@@ -18,8 +19,16 @@ namespace TaiyakiSystem
             TaiyakiListView.Items.Clear();
             foreach (var taiyaki in _taiyakiMana.TaiyakiOrderList)
             {
-                TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), taiyaki.Content.ToString(),
+                if (taiyaki.Name != Cores.Enums.TaiyakiEnum.デラックスたい焼き)
+                {
+                    TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), taiyaki.Content.ToString(),
                                                                           taiyaki.Size.ToString(), taiyaki.GetSubTotal().ToString() }));
+                }
+                else
+                {
+                    TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), $"{((DeluxeTaiyaki)taiyaki).AddingContent}と{taiyaki.Content}",
+                                                                          taiyaki.Size.ToString(), taiyaki.GetSubTotal().ToString() }));
+                }
             }
             PriceLabel.Text = $"{_taiyakiMana.GetTotalPrice().ToString("#,0円")}";
         }

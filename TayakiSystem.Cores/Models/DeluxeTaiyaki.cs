@@ -7,7 +7,7 @@ namespace TaiyakiSystem.Cores.Models
     {
         public TaiyakiContentEnum AddingContent { get; }
 
-        public DeluxeTaiyaki(TaiyakiSizeEnum size) : base(size)
+        public DeluxeTaiyaki(TaiyakiSizeEnum size)
         {
             if (TaiyakiSizeEnum.大 == size)
             {
@@ -20,6 +20,13 @@ namespace TaiyakiSystem.Cores.Models
             {
                 throw new Exception(Consts.BIG_SIZE_ONLY_ERROR_MESSAGE);
             }
+        }
+
+        public DeluxeTaiyaki() { }
+
+        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size)
+        {
+            return new DeluxeTaiyaki(size);
         }
 
         public override int GetSubTotal()

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
 using TaiyakiSystem.Cores.Models;
@@ -49,22 +50,25 @@ namespace TaiyakiSystemTest.ManagerTest
         {
             var taiyakiMana = new TaiyakiManager();
             var custardTaiyaki = new CustardTaiyaki(TaiyakiSizeEnum.中);
-            var defaultTaiyaki = new DefaultTaiyaki(TaiyakiSizeEnum.小);
+            var deluxeTaiyaki = new DeluxeTaiyaki(TaiyakiSizeEnum.大);
 
             taiyakiMana.Add(custardTaiyaki);
-            taiyakiMana.Add(defaultTaiyaki);
+            taiyakiMana.Add(deluxeTaiyaki);
 
             Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
             Assert.AreEqual(TaiyakiSizeEnum.中, taiyakiMana.GetTaiyakiOrder(0).Size);
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
-            Assert.AreEqual(TaiyakiSizeEnum.小, taiyakiMana.GetTaiyakiOrder(1).Size);
+            Assert.AreEqual(TaiyakiEnum.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
+            Assert.AreEqual(TaiyakiSizeEnum.大, taiyakiMana.GetTaiyakiOrder(1).Size);
 
             taiyakiMana.ChangeOrder(0, TaiyakiSizeEnum.大);
 
             Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
             Assert.AreEqual(TaiyakiSizeEnum.大, taiyakiMana.GetTaiyakiOrder(0).Size);
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
-            Assert.AreEqual(TaiyakiSizeEnum.小, taiyakiMana.GetTaiyakiOrder(1).Size);
+            Assert.AreEqual(TaiyakiEnum.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
+            Assert.AreEqual(TaiyakiSizeEnum.大, taiyakiMana.GetTaiyakiOrder(1).Size);
+
+            Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, TaiyakiSizeEnum.小));
+            Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, TaiyakiSizeEnum.中));
         }
     }
 }

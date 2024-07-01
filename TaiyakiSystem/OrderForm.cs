@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TaiyakiSystem.Cores;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
 
@@ -24,9 +25,9 @@ namespace TaiyakiSystem
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            DefaultRadioButton.Tag = 0;
-            CustardRadioButton.Tag = 1;
-            DeluxeRadioButton.Tag = 2;
+            DefaultRadioButton.Tag = Consts.DEFAULT_TAIYAKI_INDEX;
+            CustardRadioButton.Tag = Consts.CUSTARD_TAIYAKI_INDEX;
+            DeluxeRadioButton.Tag = Consts.DELUXE_TAIYAKI_INDEX;
 
             _taiyakiIndex = (int)DefaultRadioButton.Tag;
             _size = TaiyakiSizeEnum.大;

@@ -28,6 +28,7 @@ namespace TaiyakiSystem
             DefaultRadioButton.Tag = 0;
             CustardRadioButton.Tag = 1;
             DeluxeRadioButton.Tag = 2;
+
             _taiyakiIndex = (int)DefaultRadioButton.Tag;
             _size = TaiyakiSizeEnum.大;
         }

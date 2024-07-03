@@ -83,7 +83,6 @@
             this.SmallRadioButton.TabIndex = 4;
             this.SmallRadioButton.Text = "小";
             this.SmallRadioButton.UseVisualStyleBackColor = true;
-            this.SmallRadioButton.CheckedChanged += new System.EventHandler(this.SmallRadioButton_CheckedChanged);
             // 
             // BigRadioButton
             // 
@@ -94,7 +93,6 @@
             this.BigRadioButton.TabIndex = 3;
             this.BigRadioButton.Text = "大";
             this.BigRadioButton.UseVisualStyleBackColor = true;
-            this.BigRadioButton.CheckedChanged += new System.EventHandler(this.BigRadioButton_CheckedChanged);
             // 
             // MiddleRadioButton
             // 
@@ -105,7 +103,6 @@
             this.MiddleRadioButton.TabIndex = 3;
             this.MiddleRadioButton.Text = "中";
             this.MiddleRadioButton.UseVisualStyleBackColor = true;
-            this.MiddleRadioButton.CheckedChanged += new System.EventHandler(this.MiddleRadioButton_CheckedChanged);
             // 
             // MenuGroupBox
             // 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
@@ -32,9 +33,12 @@ namespace TaiyakiSystem
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
+            var selectedSizeRadioButton = SizeGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
+            var selectedSize = (TaiyakiSizeEnum)selectedSizeRadioButton.Tag;
+
             try
             {
-                _taiyakiMana.ChangeOrder(_selectedIndex, _size);
+                _taiyakiMana.ChangeOrder(_selectedIndex, selectedSize);
                 DialogResult = DialogResult.OK;
                 Close();
             }

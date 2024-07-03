@@ -7,6 +7,9 @@ namespace TaiyakiSystemTest.ModelTest
     [TestClass]
     public class BigSizeTest
     {
+        /// <summary>
+        /// サイズと値段が正しく取得されているか
+        /// </summary>
         [TestMethod]
         public void GetTypeAndPrice()
         {

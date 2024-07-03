@@ -11,14 +11,14 @@ namespace TaiyakiSystemTest.ManagerTest
     public class TaiyakiManagerTest
     {
         private SmallSize smallSize = new SmallSize();
-        private MiddleSize MiddleSize = new MiddleSize();
+        private MiddleSize middleSize = new MiddleSize();
         private BigSize bigSize = new BigSize();
 
         [TestMethod]
         public void AddAndTotalPriceTest()
         {
             var taiyakiMana = new TaiyakiManager();
-            var custardTaiyaki = new CustardTaiyaki(MiddleSize);
+            var custardTaiyaki = new CustardTaiyaki(middleSize);
             var defaultTaiyaki = new DefaultTaiyaki(smallSize);
             var deluxeTaiyaki = new DeluxeTaiyaki(bigSize);
 
@@ -34,11 +34,11 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiType.通常たい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(2).Name);
 
-            Assert.AreEqual(MiddleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
+            Assert.AreEqual(middleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
             Assert.AreEqual(smallSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
             Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(2).Size.Type);
 
-            var custardTaiyakiPrice = new CustardTaiyaki(MiddleSize).TaiyakiPrice;
+            var custardTaiyakiPrice = new CustardTaiyaki(middleSize).TaiyakiPrice;
             var defaultTaiyakiPrice = new DefaultTaiyaki(smallSize).TaiyakiPrice;
             var deluxeTaiyakiPrice = new DeluxeTaiyaki(bigSize).TaiyakiPrice;
 
@@ -51,7 +51,7 @@ namespace TaiyakiSystemTest.ManagerTest
         public void RemoveTest()
         {
             var taiyakiMana = new TaiyakiManager();
-            var custardTaiyaki = new CustardTaiyaki(MiddleSize);
+            var custardTaiyaki = new CustardTaiyaki(middleSize);
             var defaultTaiyaki = new DefaultTaiyaki(smallSize);
             var deluxeTaiyaki = new DeluxeTaiyaki(bigSize);
 
@@ -66,7 +66,7 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiType.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
 
-            Assert.AreEqual(MiddleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
+            Assert.AreEqual(middleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
             Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
         }
 
@@ -74,7 +74,7 @@ namespace TaiyakiSystemTest.ManagerTest
         public void ChangeOrderTest()
         {
             var taiyakiMana = new TaiyakiManager();
-            var custardTaiyaki = new CustardTaiyaki(MiddleSize);
+            var custardTaiyaki = new CustardTaiyaki(middleSize);
             var deluxeTaiyaki = new DeluxeTaiyaki(bigSize);
 
             taiyakiMana.Add(custardTaiyaki);
@@ -93,7 +93,7 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
 
             Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, smallSize));
-            Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, MiddleSize));
+            Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, middleSize));
         }
     }
 }

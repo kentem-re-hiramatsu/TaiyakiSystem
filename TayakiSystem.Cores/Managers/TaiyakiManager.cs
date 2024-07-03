@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
@@ -19,11 +18,22 @@ namespace TaiyakiSystem.Cores.Managers
 
         public void ChangeOrder(int index, TaiyakiSizeEnum size)
         {
-            if (_taiyakiOrderList[index].Name != TaiyakiEnum.デラックスたい焼き || (_taiyakiOrderList[index].Name == TaiyakiEnum.デラックスたい焼き && size == TaiyakiSizeEnum.大))
-                _taiyakiOrderList[index].Size = size;
-            else
-                throw new Exception(Consts.BIG_SIZE_ONLY_ERROR_MESSAGE);
+            _taiyakiOrderList[index].Size = size;
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
+
+        public BaseTaiyaki GetTaiyaki(TaiyakiEnum taiyaki)
+        {
+            switch (taiyaki)
+            {
+                case TaiyakiEnum.通常たい焼き:
+                    return new DefaultTaiyaki();
+                case TaiyakiEnum.カスタードたい焼き:
+                    return new CustardTaiyaki();
+                case TaiyakiEnum.デラックスたい焼き:
+                    return new DeluxeTaiyaki();
+            }
+            return null;
+        }
     }
 }

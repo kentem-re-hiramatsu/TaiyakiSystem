@@ -20,8 +20,12 @@ namespace TaiyakiSystem.Cores.Models
             SizeCheck(size);
         }
 
+        /// <summary>
+        /// サイズのチェック
+        /// </summary>
         private void SizeCheck(Size size)
         {
+            //サイズが大以外はエラーを返す
             if (size.Type == TaiyakiSizeType.大)
             {
                 InitialSetting(NAME, PRICE, CONTENT);

@@ -8,6 +8,9 @@ namespace TaiyakiSystem.Cores.Models
         public TaiyakiType Name { get; protected set; }
         public int TaiyakiPrice { get; protected set; }
         public Size Size { get; protected set; }
+        /// <summary>
+        /// たい焼きの中身
+        /// </summary>
         public string Content { get; protected set; }
 
         public BaseTaiyaki(Size size)
@@ -15,6 +18,9 @@ namespace TaiyakiSystem.Cores.Models
             Size = size;
         }
 
+        /// <summary>
+        /// 初期設定
+        /// </summary>
         protected void InitialSetting(TaiyakiType name, int price, string content)
         {
             Name = name;

@@ -2,35 +2,49 @@
 using System;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
+using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystemTest.ModelTest
 {
     [TestClass]
     public class DeluxeTaiyakiTest
     {
+        private DeluxeTaiyaki miniTaiyaki = new DeluxeTaiyaki(new SmallSize());
+        private DeluxeTaiyaki middleTaiyaki = new DeluxeTaiyaki(new MiddleSize());
+        private DeluxeTaiyaki bigTaiyaki = new DeluxeTaiyaki(new BigSize());
+
         [TestMethod]
-        public void DeluxeTaiyakiConstructorTest()
+        public void SizeTest()
         {
-            var bigTaiyaki = new DeluxeTaiyaki(TaiyakiSizeType.大);
-
             //大以外を選択した場合エラーを返す
-            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeType.小));
-            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeType.中));
+            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(new SmallSize()));
+            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(new MiddleSize()));
 
-            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size);
-            Assert.AreEqual(TaiyakiType.デラックスたい焼き, bigTaiyaki.Name);
-            Assert.AreEqual(TaiyakiContentEnum.カスタード, bigTaiyaki.Content);
-            Assert.AreEqual(TaiyakiContentEnum.生クリーム, bigTaiyaki.DeluxeTaiyakiContent);
-            Assert.AreEqual(300, bigTaiyaki.GetPrice());
+            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size.Type);
         }
 
         [TestMethod]
-        public void GetCloneTaiyakiTest()
+        public void NameTest()
         {
-            var taiyakiClone = new DeluxeTaiyaki().GetCloneTaiyaki(TaiyakiSizeType.大);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, miniTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, middleTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, bigTaiyaki.Name);
+        }
 
-            Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiClone.Name);
-            Assert.AreEqual(TaiyakiSizeType.大, taiyakiClone.Size);
+        [TestMethod]
+        public void ContentTest()
+        {
+            Assert.AreEqual("あんこ", miniTaiyaki.Content);
+            Assert.AreEqual("あんこ", middleTaiyaki.Content);
+            Assert.AreEqual("あんこ", bigTaiyaki.Content);
+        }
+
+        [TestMethod]
+        public void PriceTest()
+        {
+            Assert.AreEqual(100, miniTaiyaki.GetPrice());
+            Assert.AreEqual(150, middleTaiyaki.GetPrice());
+            Assert.AreEqual(200, bigTaiyaki.GetPrice());
         }
     }
 }

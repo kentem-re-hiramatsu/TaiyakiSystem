@@ -23,25 +23,25 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void NameTest()
         {
-            Assert.AreEqual(TaiyakiType.通常たい焼き, miniTaiyaki.Name);
-            Assert.AreEqual(TaiyakiType.通常たい焼き, middleTaiyaki.Name);
-            Assert.AreEqual(TaiyakiType.通常たい焼き, bigTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, miniTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, middleTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, bigTaiyaki.Name);
         }
 
         [TestMethod]
         public void ContentTest()
         {
-            Assert.AreEqual("あんこ", miniTaiyaki.Content);
-            Assert.AreEqual("あんこ", middleTaiyaki.Content);
-            Assert.AreEqual("あんこ", bigTaiyaki.Content);
+            Assert.AreEqual("カスタード", miniTaiyaki.Content);
+            Assert.AreEqual("カスタード", middleTaiyaki.Content);
+            Assert.AreEqual("カスタード", bigTaiyaki.Content);
         }
 
         [TestMethod]
         public void PriceTest()
         {
-            Assert.AreEqual(100, miniTaiyaki.GetPrice());
-            Assert.AreEqual(150, middleTaiyaki.GetPrice());
-            Assert.AreEqual(200, bigTaiyaki.GetPrice());
+            Assert.AreEqual(150, miniTaiyaki.GetPrice());
+            Assert.AreEqual(200, middleTaiyaki.GetPrice());
+            Assert.AreEqual(250, bigTaiyaki.GetPrice());
         }
     }
 }

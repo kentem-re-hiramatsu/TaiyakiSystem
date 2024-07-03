@@ -20,7 +20,7 @@ namespace TaiyakiSystem
             TaiyakiListView.Items.Clear();
             foreach (var taiyaki in _taiyakiMana.TaiyakiOrderList)
             {
-                TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), taiyaki.Content.ToString(), taiyaki.Size.Type.ToString(), taiyaki.GetPrice().ToString() }));
+                TaiyakiListView.Items.Add(new ListViewItem(new string[] { taiyaki.Name.ToString(), taiyaki.Content.ToString(), taiyaki.Size.ToString(), taiyaki.GetPrice().ToString() }));
             }
             PriceLabel.Text = $"{_taiyakiMana.GetTotalPrice().ToString("#,0円")}";
         }

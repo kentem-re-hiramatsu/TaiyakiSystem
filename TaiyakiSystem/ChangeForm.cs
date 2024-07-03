@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
+using TaiyakiSystem.Cores.Models;
 
 namespace TaiyakiSystem
 {
@@ -22,13 +23,13 @@ namespace TaiyakiSystem
         {
             var taiyaki = _taiyakiMana.GetTaiyakiOrder(_selectedIndex);
 
-            DefaultRadioButton.Checked = taiyaki.Name == TaiyakiType.通常たい焼き;
-            CustardRadioButton.Checked = taiyaki.Name == TaiyakiType.カスタードたい焼き;
-            DeluxeRadioButton.Checked = taiyaki.Name == TaiyakiType.デラックスたい焼き;
+            DefaultRadioButton.Checked = taiyaki is DefaultTaiyaki;
+            CustardRadioButton.Checked = taiyaki is CustardTaiyaki;
+            DeluxeRadioButton.Checked = taiyaki is DeluxeTaiyaki;
 
-            BigRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.大;
-            MiddleRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.中;
-            SmallRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.小;
+            BigRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.大;
+            MiddleRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.中;
+            SmallRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.小;
 
             BigRadioButton.Tag = TaiyakiSizeType.大;
             MiddleRadioButton.Tag = TaiyakiSizeType.中;
@@ -42,7 +43,7 @@ namespace TaiyakiSystem
 
             try
             {
-                _taiyakiMana.ChangeOrder(_selectedIndex, _taiyakiMana.GetSize(selectedSize));
+                _taiyakiMana.ChangeOrder(_selectedIndex, selectedSize);
                 DialogResult = DialogResult.OK;
                 Close();
             }

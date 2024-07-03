@@ -4,7 +4,7 @@ namespace TaiyakiSystem.Cores.Models
 {
     public abstract class BaseTaiyaki
     {
-        public string Name { get; protected set; }
+        public TaiyakiEnum Name { get; protected set; }
         public int TaiyakiPrice { get; protected set; }
         public TaiyakiSizeEnum Size { get; set; }
         public int SizePrice { get; protected set; }

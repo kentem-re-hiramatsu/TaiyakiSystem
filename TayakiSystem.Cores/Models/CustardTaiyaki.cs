@@ -4,7 +4,7 @@ namespace TaiyakiSystem.Cores.Models
 {
     public class CustardTaiyaki : BaseTaiyaki
     {
-        private const string NAME = "カスタードたい焼き";
+        private const TaiyakiEnum NAME = TaiyakiEnum.カスタードたい焼き;
         private const int PRICE = 150;
         private const string CONTENT = "カスタード";
 

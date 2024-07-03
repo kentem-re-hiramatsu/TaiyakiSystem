@@ -5,7 +5,7 @@ namespace TaiyakiSystem.Cores.Models
 {
     public class DeluxeTaiyaki : BaseTaiyaki
     {
-        private const string NAME = "デラックスたい焼き";
+        private const TaiyakiEnum NAME = TaiyakiEnum.デラックスたい焼き;
         private const int PRICE = 300;
         private const string CONTENT = "生クリームとカスタード";
 

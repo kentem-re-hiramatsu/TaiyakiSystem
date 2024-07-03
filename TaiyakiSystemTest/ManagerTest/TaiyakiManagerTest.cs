@@ -3,16 +3,15 @@ using System;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Managers;
 using TaiyakiSystem.Cores.Models;
-using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystemTest.ManagerTest
 {
     [TestClass]
     public class TaiyakiManagerTest
     {
-        private SmallSize smallSize = new SmallSize();
-        private MiddleSize middleSize = new MiddleSize();
-        private BigSize bigSize = new BigSize();
+        private TaiyakiSizeType smallSize = TaiyakiSizeType.小;
+        private TaiyakiSizeType middleSize = TaiyakiSizeType.中;
+        private TaiyakiSizeType bigSize = TaiyakiSizeType.大;
 
         /// <summary>
         /// 追加と合計金額のテスト
@@ -37,12 +36,12 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiType.通常たい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(2).Name);
 
-            Assert.AreEqual(middleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
-            Assert.AreEqual(smallSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
-            Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(2).Size.Type);
+            Assert.AreEqual(middleSize, taiyakiMana.GetTaiyakiOrder(0).Size);
+            Assert.AreEqual(smallSize, taiyakiMana.GetTaiyakiOrder(1).Size);
+            Assert.AreEqual(bigSize, taiyakiMana.GetTaiyakiOrder(2).Size);
 
-            var custardTaiyakiPrice = new CustardTaiyaki(middleSize).TaiyakiPrice + middleSize.Price;
-            var defaultTaiyakiPrice = new DefaultTaiyaki(smallSize).TaiyakiPrice + smallSize.Price;
+            var custardTaiyakiPrice = new CustardTaiyaki(middleSize).TaiyakiPrice + (int)middleSize;
+            var defaultTaiyakiPrice = new DefaultTaiyaki(smallSize).TaiyakiPrice + (int)smallSize;
             var deluxeTaiyakiPrice = new DeluxeTaiyaki(bigSize).TaiyakiPrice;
 
             var totalPrice = custardTaiyakiPrice + defaultTaiyakiPrice + deluxeTaiyakiPrice;
@@ -72,8 +71,8 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiType.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
 
-            Assert.AreEqual(middleSize.Type, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
-            Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
+            Assert.AreEqual(middleSize, taiyakiMana.GetTaiyakiOrder(0).Size);
+            Assert.AreEqual(bigSize, taiyakiMana.GetTaiyakiOrder(1).Size);
         }
 
         /// <summary>
@@ -90,16 +89,16 @@ namespace TaiyakiSystemTest.ManagerTest
             taiyakiMana.Add(deluxeTaiyaki);
 
             Assert.AreEqual(TaiyakiType.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
-            Assert.AreEqual(TaiyakiSizeType.中, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.中, taiyakiMana.GetTaiyakiOrder(0).Size);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
-            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size);
 
             taiyakiMana.ChangeOrder(0, bigSize);
 
             Assert.AreEqual(TaiyakiType.カスタードたい焼き, taiyakiMana.GetTaiyakiOrder(0).Name);
-            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(0).Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(0).Size);
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
-            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size);
 
             //デラックスたい焼きのサイズは大のみのため小と中サイズはエラー
             Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, smallSize));
@@ -143,23 +142,6 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(bigSize, bigSizeCustardTaiyaki.Size);
 
             Assert.AreEqual(bigSize, bigSizeDeluxeTaiyaki.Size);
-        }
-
-        /// <summary>
-        /// GetSizeメソッドのテスト
-        /// </summary>
-        [TestMethod]
-        public void GetSizeTest()
-        {
-            var taiyakiMana = new TaiyakiManager();
-
-            var smallSize = taiyakiMana.GetSize(TaiyakiSizeType.小);
-            var middleSize = taiyakiMana.GetSize(TaiyakiSizeType.中);
-            var bigSize = taiyakiMana.GetSize(TaiyakiSizeType.大);
-
-            Assert.AreEqual(TaiyakiSizeType.小, smallSize.Type);
-            Assert.AreEqual(TaiyakiSizeType.中, middleSize.Type);
-            Assert.AreEqual(TaiyakiSizeType.大, bigSize.Type);
         }
     }
 }

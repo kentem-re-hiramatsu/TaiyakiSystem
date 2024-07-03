@@ -2,14 +2,13 @@
 using System;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
-using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystemTest.ModelTest
 {
     [TestClass]
     public class DeluxeTaiyakiTest
     {
-        private DeluxeTaiyaki bigTaiyaki = new DeluxeTaiyaki(new BigSize());
+        private DeluxeTaiyaki bigTaiyaki = new DeluxeTaiyaki(TaiyakiSizeType.大);
 
         /// <summary>
         /// サイズのテスト
@@ -18,10 +17,10 @@ namespace TaiyakiSystemTest.ModelTest
         public void SizeTest()
         {
             //大以外を選択した場合エラーを返す
-            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(new SmallSize()));
-            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(new MiddleSize()));
+            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeType.小));
+            Assert.ThrowsException<Exception>(() => new DeluxeTaiyaki(TaiyakiSizeType.中));
 
-            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size);
         }
 
         /// <summary>

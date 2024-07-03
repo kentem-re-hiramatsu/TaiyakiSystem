@@ -1,16 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
-using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystemTest.ModelTest
 {
     [TestClass]
     public class CustardTaiyakiTest
     {
-        private CustardTaiyaki miniTaiyaki = new CustardTaiyaki(new SmallSize());
-        private CustardTaiyaki middleTaiyaki = new CustardTaiyaki(new MiddleSize());
-        private CustardTaiyaki bigTaiyaki = new CustardTaiyaki(new BigSize());
+        private CustardTaiyaki miniTaiyaki = new CustardTaiyaki(TaiyakiSizeType.小);
+        private CustardTaiyaki middleTaiyaki = new CustardTaiyaki(TaiyakiSizeType.中);
+        private CustardTaiyaki bigTaiyaki = new CustardTaiyaki(TaiyakiSizeType.大);
 
         /// <summary>
         /// サイズのテスト
@@ -18,9 +17,9 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void SizeTest()
         {
-            Assert.AreEqual(TaiyakiSizeType.小, miniTaiyaki.Size.Type);
-            Assert.AreEqual(TaiyakiSizeType.中, middleTaiyaki.Size.Type);
-            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size.Type);
+            Assert.AreEqual(TaiyakiSizeType.小, miniTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.中, middleTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size);
         }
 
         /// <summary>

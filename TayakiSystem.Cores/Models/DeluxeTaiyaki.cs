@@ -12,6 +12,16 @@ namespace TaiyakiSystem.Cores.Models
 
         public DeluxeTaiyaki(Size size) : base(size)
         {
+            SizeCheck(size);
+        }
+
+        public override void SetSize(Size size)
+        {
+            SizeCheck(size);
+        }
+
+        private void SizeCheck(Size size)
+        {
             if (size.Type == TaiyakiSizeType.大)
             {
                 InitialSetting(NAME, PRICE, CONTENT);

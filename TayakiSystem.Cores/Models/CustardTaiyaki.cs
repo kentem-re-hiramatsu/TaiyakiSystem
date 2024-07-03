@@ -14,6 +14,8 @@ namespace TaiyakiSystem.Cores.Models
             InitialSetting(NAME, PRICE, CONTENT);
         }
 
+        public override void SetSize(Size size) => Size = size;
+
         public override int GetPrice() => TaiyakiPrice + Size.Price;
     }
 }

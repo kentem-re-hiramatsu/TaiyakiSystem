@@ -7,7 +7,7 @@ namespace TaiyakiSystem.Cores.Models
     {
         public TaiyakiType Name { get; protected set; }
         public int TaiyakiPrice { get; protected set; }
-        public Size Size { get; set; }
+        public Size Size { get; protected set; }
         public string Content { get; protected set; }
 
         public BaseTaiyaki(Size size)
@@ -21,6 +21,8 @@ namespace TaiyakiSystem.Cores.Models
             TaiyakiPrice = price;
             Content = content;
         }
+
+        public abstract void SetSize(Size size);
 
         public abstract int GetPrice();
     }

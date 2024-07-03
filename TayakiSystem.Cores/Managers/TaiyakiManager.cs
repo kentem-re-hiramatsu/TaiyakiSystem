@@ -19,7 +19,7 @@ namespace TaiyakiSystem.Cores.Managers
 
         public void ChangeOrder(int index, Size size)
         {
-            _taiyakiOrderList[index].Size = size;
+            _taiyakiOrderList[index].SetSize(size);
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 

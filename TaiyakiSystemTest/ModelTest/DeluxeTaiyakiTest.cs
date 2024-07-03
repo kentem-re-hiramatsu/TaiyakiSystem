@@ -21,7 +21,7 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, bigTaiyaki.Name);
             Assert.AreEqual(TaiyakiContentEnum.カスタード, bigTaiyaki.Content);
             Assert.AreEqual(TaiyakiContentEnum.生クリーム, bigTaiyaki.DeluxeTaiyakiContent);
-            Assert.AreEqual(300, bigTaiyaki.GetSubTotal());
+            Assert.AreEqual(300, bigTaiyaki.GetPrice());
         }
 
         [TestMethod]

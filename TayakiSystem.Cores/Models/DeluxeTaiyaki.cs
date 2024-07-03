@@ -22,6 +22,6 @@ namespace TaiyakiSystem.Cores.Models
             }
         }
 
-        public override int GetSubTotal() => TaiyakiPrice;
+        public override int GetPrice() => TaiyakiPrice;
     }
 }

@@ -9,8 +9,7 @@ namespace TayakiSystem.Cores.Models
 
         public BigSize()
         {
-            Type = TYPE;
-            Price = PRICE;
+            InitialSetting(TYPE, PRICE);
         }
     }
 }

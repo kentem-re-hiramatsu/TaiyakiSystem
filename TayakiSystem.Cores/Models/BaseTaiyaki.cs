@@ -22,6 +22,6 @@ namespace TaiyakiSystem.Cores.Models
             Content = content;
         }
 
-        public abstract int GetSubTotal();
+        public abstract int GetPrice();
     }
 }

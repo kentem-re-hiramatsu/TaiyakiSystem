@@ -15,7 +15,7 @@ namespace TaiyakiSystem.Cores.Managers
 
         public BaseTaiyaki GetTaiyakiOrder(int index) => _taiyakiOrderList[index];
 
-        public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetSubTotal());
+        public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetPrice());
 
         public void ChangeOrder(int index, Size size)
         {

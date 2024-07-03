@@ -26,9 +26,9 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiContentEnum.カスタード, middleTaiyaki.Content);
             Assert.AreEqual(TaiyakiContentEnum.カスタード, bigTaiyaki.Content);
 
-            Assert.AreEqual(150, miniTaiyaki.GetSubTotal());
-            Assert.AreEqual(200, middleTaiyaki.GetSubTotal());
-            Assert.AreEqual(250, bigTaiyaki.GetSubTotal());
+            Assert.AreEqual(150, miniTaiyaki.GetPrice());
+            Assert.AreEqual(200, middleTaiyaki.GetPrice());
+            Assert.AreEqual(250, bigTaiyaki.GetPrice());
         }
 
         [TestMethod]

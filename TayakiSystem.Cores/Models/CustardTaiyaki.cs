@@ -9,12 +9,9 @@ namespace TaiyakiSystem.Cores.Models
         private const int PRICE = 150;
         private const string CONTENT = "カスタード";
 
-        public CustardTaiyaki(Size size)
+        public CustardTaiyaki(Size size) : base(size)
         {
-            Name = NAME;
-            TaiyakiPrice = PRICE;
-            Content = CONTENT;
-            Size = size;
+            InitialSetting(NAME, PRICE, CONTENT);
         }
 
         public override int GetSubTotal() => TaiyakiPrice + Size.Price;

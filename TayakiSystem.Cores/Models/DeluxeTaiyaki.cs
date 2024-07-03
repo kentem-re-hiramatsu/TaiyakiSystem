@@ -10,14 +10,11 @@ namespace TaiyakiSystem.Cores.Models
         private const int PRICE = 300;
         private const string CONTENT = "生クリームとカスタード";
 
-        public DeluxeTaiyaki(Size size)
+        public DeluxeTaiyaki(Size size) : base(size)
         {
-            if (TaiyakiSizeType.大 == size.Type)
+            if (size.Type == TaiyakiSizeType.大)
             {
-                Name = NAME;
-                TaiyakiPrice = PRICE;
-                Content = CONTENT;
-                Size = size;
+                InitialSetting(NAME, PRICE, CONTENT);
             }
             else
             {

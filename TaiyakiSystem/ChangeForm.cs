@@ -9,7 +9,6 @@ namespace TaiyakiSystem
     {
         private TaiyakiManager _taiyakiMana;
         private int _selectedIndex;
-        private TaiyakiSizeEnum _size;
 
         public ChangeForm(TaiyakiManager taiyakiMana, int selectedIndex)
         {
@@ -21,7 +20,6 @@ namespace TaiyakiSystem
         private void ChangeForm_Load(object sender, EventArgs e)
         {
             var taiyaki = _taiyakiMana.GetTaiyakiOrder(_selectedIndex);
-            _size = taiyaki.Size;
 
             DefaultRadioButton.Checked = taiyaki.Name == TaiyakiEnum.通常たい焼き;
             CustardRadioButton.Checked = taiyaki.Name == TaiyakiEnum.カスタードたい焼き;
@@ -44,21 +42,6 @@ namespace TaiyakiSystem
             {
                 MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void BigRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            _size = TaiyakiSizeEnum.大;
-        }
-
-        private void MiddleRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            _size = TaiyakiSizeEnum.中;
-        }
-
-        private void SmallRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            _size = TaiyakiSizeEnum.小;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

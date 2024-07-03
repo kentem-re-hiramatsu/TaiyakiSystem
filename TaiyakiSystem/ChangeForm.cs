@@ -26,9 +26,9 @@ namespace TaiyakiSystem
             CustardRadioButton.Checked = taiyaki.Name == TaiyakiType.カスタードたい焼き;
             DeluxeRadioButton.Checked = taiyaki.Name == TaiyakiType.デラックスたい焼き;
 
-            BigRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.大;
-            MiddleRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.中;
-            SmallRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.小;
+            BigRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.大;
+            MiddleRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.中;
+            SmallRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.小;
         }
 
         private void BuyButton_Click(object sender, EventArgs e)

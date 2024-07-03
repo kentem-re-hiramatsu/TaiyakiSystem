@@ -15,14 +15,23 @@ namespace TaiyakiSystem.Cores.Managers
 
         public BaseTaiyaki GetTaiyakiOrder(int index) => _taiyakiOrderList[index];
 
+        /// <summary>
+        /// 注文合計金額の返す
+        /// </summary>
         public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetPrice());
 
+        /// <summary>
+        ///注文されたたい焼きのサイズを変更
+        /// </summary>
         public void ChangeOrder(int index, Size size)
         {
             _taiyakiOrderList[index].SetSize(size);
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 
+        /// <summary>
+        /// たい焼きのインスタンスを返す
+        /// </summary>
         public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, Size size)
         {
             switch (taiyaki)
@@ -37,6 +46,9 @@ namespace TaiyakiSystem.Cores.Managers
             return null;
         }
 
+        /// <summary>
+        /// サイズのインスタンスを返す
+        /// </summary>
         public Size GetSize(TaiyakiSizeType size)
         {
             switch (size)

@@ -45,14 +45,10 @@
     <Compile Include="Enums\TaiyakiType.cs" />
     <Compile Include="Enums\TaiyakiSizeType.cs" />
     <Compile Include="Managers\TaiyakiManager.cs" />
-    <Compile Include="Models\BigSize.cs" />
     <Compile Include="Models\CustardTaiyaki.cs" />
     <Compile Include="Models\DefaultTaiyaki.cs" />
     <Compile Include="Models\DeluxeTaiyaki.cs" />
     <Compile Include="Models\BaseTaiyaki.cs" />
-    <Compile Include="Models\MiddleSize.cs" />
-    <Compile Include="Models\Size.cs" />
-    <Compile Include="Models\SmallSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

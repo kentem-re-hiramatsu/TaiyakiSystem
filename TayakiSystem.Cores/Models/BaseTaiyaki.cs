@@ -6,7 +6,7 @@ namespace TaiyakiSystem.Cores.Models
     {
         public string Name { get; protected set; }
         public int TaiyakiPrice { get; protected set; }
-        public TaiyakiSizeType Size { get; protected set; }
+        public TaiyakiSizeType Size { get; set; }
         /// <summary>
         /// たい焼きの中身
         /// </summary>

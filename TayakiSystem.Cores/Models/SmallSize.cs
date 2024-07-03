@@ -9,8 +9,7 @@ namespace TayakiSystem.Cores.Models
 
         public SmallSize()
         {
-            Type = TYPE;
-            Price = PRICE;
+            InitialSetting(TYPE, PRICE);
         }
     }
 }

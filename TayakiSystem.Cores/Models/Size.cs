@@ -6,5 +6,11 @@ namespace TayakiSystem.Cores.Models
     {
         public TaiyakiSizeType Type { get; set; }
         public int Price { get; protected set; }
+
+        protected void InitialSetting(TaiyakiSizeType type, int price)
+        {
+            Type = type;
+            Price = price;
+        }
     }
 }

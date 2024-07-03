@@ -2,7 +2,6 @@
 using System.Linq;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
-using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystem.Cores.Managers
 {
@@ -23,16 +22,16 @@ namespace TaiyakiSystem.Cores.Managers
         /// <summary>
         ///注文されたたい焼きのサイズを変更
         /// </summary>
-        public void ChangeOrder(int index, Size size)
+        public void ChangeOrder(int index, TaiyakiSizeType size)
         {
-            _taiyakiOrderList[index].SetSize(size);
+            _taiyakiOrderList[index].Size = size;
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 
         /// <summary>
         /// たい焼きのインスタンスを返す
         /// </summary>
-        public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, Size size)
+        public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, TaiyakiSizeType size)
         {
             switch (taiyaki)
             {
@@ -42,23 +41,6 @@ namespace TaiyakiSystem.Cores.Managers
                     return new CustardTaiyaki(size);
                 case TaiyakiType.デラックスたい焼き:
                     return new DeluxeTaiyaki(size);
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// サイズのインスタンスを返す
-        /// </summary>
-        public Size GetSize(TaiyakiSizeType size)
-        {
-            switch (size)
-            {
-                case TaiyakiSizeType.大:
-                    return new BigSize();
-                case TaiyakiSizeType.中:
-                    return new MiddleSize();
-                case TaiyakiSizeType.小:
-                    return new SmallSize();
             }
             return null;
         }

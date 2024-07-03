@@ -10,17 +10,17 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void CustardTaiyakiConstructorTest()
         {
-            var miniTaiyaki = new CustardTaiyaki(TaiyakiSizeEnum.小);
-            var middleTaiyaki = new CustardTaiyaki(TaiyakiSizeEnum.中);
-            var bigTaiyaki = new CustardTaiyaki(TaiyakiSizeEnum.大);
+            var miniTaiyaki = new CustardTaiyaki(TaiyakiSizeType.小);
+            var middleTaiyaki = new CustardTaiyaki(TaiyakiSizeType.中);
+            var bigTaiyaki = new CustardTaiyaki(TaiyakiSizeType.大);
 
-            Assert.AreEqual(TaiyakiSizeEnum.小, miniTaiyaki.Size);
-            Assert.AreEqual(TaiyakiSizeEnum.中, middleTaiyaki.Size);
-            Assert.AreEqual(TaiyakiSizeEnum.大, bigTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.小, miniTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.中, middleTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size);
 
-            Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, miniTaiyaki.Name);
-            Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, middleTaiyaki.Name);
-            Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, bigTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, miniTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, middleTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, bigTaiyaki.Name);
 
             Assert.AreEqual(TaiyakiContentEnum.カスタード, miniTaiyaki.Content);
             Assert.AreEqual(TaiyakiContentEnum.カスタード, middleTaiyaki.Content);
@@ -34,10 +34,10 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void GetCloneTaiyakiTest()
         {
-            var taiyakiClone = new CustardTaiyaki().GetCloneTaiyaki(TaiyakiSizeEnum.中);
+            var taiyakiClone = new CustardTaiyaki().GetCloneTaiyaki(TaiyakiSizeType.中);
 
-            Assert.AreEqual(TaiyakiEnum.カスタードたい焼き, taiyakiClone.Name);
-            Assert.AreEqual(TaiyakiSizeEnum.中, taiyakiClone.Size);
+            Assert.AreEqual(TaiyakiType.カスタードたい焼き, taiyakiClone.Name);
+            Assert.AreEqual(TaiyakiSizeType.中, taiyakiClone.Size);
         }
     }
 }

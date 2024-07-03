@@ -16,21 +16,21 @@ namespace TaiyakiSystem.Cores.Managers
 
         public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetSubTotal());
 
-        public void ChangeOrder(int index, TaiyakiSizeEnum size)
+        public void ChangeOrder(int index, TaiyakiSizeType size)
         {
             _taiyakiOrderList[index].Size = size;
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 
-        public BaseTaiyaki GetTaiyaki(TaiyakiEnum taiyaki, TaiyakiSizeEnum size)
+        public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, TaiyakiSizeType size)
         {
             switch (taiyaki)
             {
-                case TaiyakiEnum.通常たい焼き:
+                case TaiyakiType.通常たい焼き:
                     return new DefaultTaiyaki(size);
-                case TaiyakiEnum.カスタードたい焼き:
+                case TaiyakiType.カスタードたい焼き:
                     return new CustardTaiyaki(size);
-                case TaiyakiEnum.デラックスたい焼き:
+                case TaiyakiType.デラックスたい焼き:
                     return new DeluxeTaiyaki(size);
             }
             return null;

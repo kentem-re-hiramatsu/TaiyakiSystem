@@ -22,19 +22,19 @@ namespace TaiyakiSystem
         {
             var taiyaki = _taiyakiMana.GetTaiyakiOrder(_selectedIndex);
 
-            DefaultRadioButton.Checked = taiyaki.Name == TaiyakiEnum.通常たい焼き;
-            CustardRadioButton.Checked = taiyaki.Name == TaiyakiEnum.カスタードたい焼き;
-            DeluxeRadioButton.Checked = taiyaki.Name == TaiyakiEnum.デラックスたい焼き;
+            DefaultRadioButton.Checked = taiyaki.Name == TaiyakiType.通常たい焼き;
+            CustardRadioButton.Checked = taiyaki.Name == TaiyakiType.カスタードたい焼き;
+            DeluxeRadioButton.Checked = taiyaki.Name == TaiyakiType.デラックスたい焼き;
 
-            BigRadioButton.Checked = taiyaki.Size == TaiyakiSizeEnum.大;
-            MiddleRadioButton.Checked = taiyaki.Size == TaiyakiSizeEnum.中;
-            SmallRadioButton.Checked = taiyaki.Size == TaiyakiSizeEnum.小;
+            BigRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.大;
+            MiddleRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.中;
+            SmallRadioButton.Checked = taiyaki.Size == TaiyakiSizeType.小;
         }
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
             var selectedSizeRadioButton = SizeGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
-            var selectedSize = (TaiyakiSizeEnum)selectedSizeRadioButton.Tag;
+            var selectedSize = (TaiyakiSizeType)selectedSizeRadioButton.Tag;
 
             try
             {

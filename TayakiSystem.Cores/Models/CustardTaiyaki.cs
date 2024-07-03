@@ -4,11 +4,11 @@ namespace TaiyakiSystem.Cores.Models
 {
     public class CustardTaiyaki : BaseTaiyaki
     {
-        private const TaiyakiEnum NAME = TaiyakiEnum.カスタードたい焼き;
+        private const TaiyakiType NAME = TaiyakiType.カスタードたい焼き;
         private const int PRICE = 150;
         private const string CONTENT = "カスタード";
 
-        public CustardTaiyaki(TaiyakiSizeEnum size)
+        public CustardTaiyaki(TaiyakiSizeType size)
         {
             Name = NAME;
             TaiyakiPrice = PRICE;
@@ -19,7 +19,7 @@ namespace TaiyakiSystem.Cores.Models
 
         public CustardTaiyaki() { }
 
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size) => new CustardTaiyaki(size);
+        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeType size) => new CustardTaiyaki(size);
 
         public override int GetSubTotal() => TaiyakiPrice + SizePrice;
     }

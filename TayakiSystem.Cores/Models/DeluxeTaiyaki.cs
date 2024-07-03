@@ -5,13 +5,13 @@ namespace TaiyakiSystem.Cores.Models
 {
     public class DeluxeTaiyaki : BaseTaiyaki
     {
-        private const TaiyakiEnum NAME = TaiyakiEnum.デラックスたい焼き;
+        private const TaiyakiType NAME = TaiyakiType.デラックスたい焼き;
         private const int PRICE = 300;
         private const string CONTENT = "生クリームとカスタード";
 
-        public DeluxeTaiyaki(TaiyakiSizeEnum size)
+        public DeluxeTaiyaki(TaiyakiSizeType size)
         {
-            if (TaiyakiSizeEnum.大 == size)
+            if (TaiyakiSizeType.大 == size)
             {
                 Name = NAME;
                 TaiyakiPrice = PRICE;
@@ -27,7 +27,7 @@ namespace TaiyakiSystem.Cores.Models
 
         public DeluxeTaiyaki() { }
 
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeEnum size) => new DeluxeTaiyaki(size);
+        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeType size) => new DeluxeTaiyaki(size);
 
         public override int GetSubTotal() => TaiyakiPrice;
     }

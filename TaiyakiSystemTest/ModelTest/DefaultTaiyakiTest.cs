@@ -10,17 +10,17 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void DefaultTaiyakiConstructorTest()
         {
-            var miniTaiyaki = new DefaultTaiyaki(TaiyakiSizeEnum.小);
-            var middleTaiyaki = new DefaultTaiyaki(TaiyakiSizeEnum.中);
-            var bigTaiyaki = new DefaultTaiyaki(TaiyakiSizeEnum.大);
+            var miniTaiyaki = new DefaultTaiyaki(TaiyakiSizeType.小);
+            var middleTaiyaki = new DefaultTaiyaki(TaiyakiSizeType.中);
+            var bigTaiyaki = new DefaultTaiyaki(TaiyakiSizeType.大);
 
-            Assert.AreEqual(TaiyakiSizeEnum.小, miniTaiyaki.Size);
-            Assert.AreEqual(TaiyakiSizeEnum.中, middleTaiyaki.Size);
-            Assert.AreEqual(TaiyakiSizeEnum.大, bigTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.小, miniTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.中, middleTaiyaki.Size);
+            Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size);
 
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, miniTaiyaki.Name);
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, middleTaiyaki.Name);
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, bigTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, miniTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, middleTaiyaki.Name);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, bigTaiyaki.Name);
 
             Assert.AreEqual(TaiyakiContentEnum.あんこ, miniTaiyaki.Content);
             Assert.AreEqual(TaiyakiContentEnum.あんこ, middleTaiyaki.Content);
@@ -35,10 +35,10 @@ namespace TaiyakiSystemTest.ModelTest
         [TestMethod]
         public void GetCloneTaiyakiTest()
         {
-            var taiyakiClone = new DefaultTaiyaki().GetCloneTaiyaki(TaiyakiSizeEnum.大);
+            var taiyakiClone = new DefaultTaiyaki().GetCloneTaiyaki(TaiyakiSizeType.大);
 
-            Assert.AreEqual(TaiyakiEnum.通常たい焼き, taiyakiClone.Name);
-            Assert.AreEqual(TaiyakiSizeEnum.大, taiyakiClone.Size);
+            Assert.AreEqual(TaiyakiType.通常たい焼き, taiyakiClone.Name);
+            Assert.AreEqual(TaiyakiSizeType.大, taiyakiClone.Size);
         }
     }
 }

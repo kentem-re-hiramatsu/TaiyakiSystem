@@ -1,6 +1,6 @@
 ﻿namespace TaiyakiSystem.Cores.Enums
 {
-    public enum TaiyakiSizeEnum
+    public enum TaiyakiSizeType
     {
         小 = 0,
         中,

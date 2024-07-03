@@ -23,22 +23,22 @@ namespace TaiyakiSystem
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            DefaultRadioButton.Tag = TaiyakiEnum.通常たい焼き;
-            CustardRadioButton.Tag = TaiyakiEnum.カスタードたい焼き;
-            DeluxeRadioButton.Tag = TaiyakiEnum.デラックスたい焼き;
+            DefaultRadioButton.Tag = TaiyakiType.通常たい焼き;
+            CustardRadioButton.Tag = TaiyakiType.カスタードたい焼き;
+            DeluxeRadioButton.Tag = TaiyakiType.デラックスたい焼き;
 
-            BigRadioButton.Tag = TaiyakiSizeEnum.大;
-            MiddleRadioButton.Tag = TaiyakiSizeEnum.中;
-            SmallRadioButton.Tag = TaiyakiSizeEnum.小;
+            BigRadioButton.Tag = TaiyakiSizeType.大;
+            MiddleRadioButton.Tag = TaiyakiSizeType.中;
+            SmallRadioButton.Tag = TaiyakiSizeType.小;
         }
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
             var selectedTaiyakiRadioButton = MenuGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
-            var selectedTaiyaki = (TaiyakiEnum)selectedTaiyakiRadioButton.Tag;
+            var selectedTaiyaki = (TaiyakiType)selectedTaiyakiRadioButton.Tag;
 
             var selectedSizeRadioButton = SizeGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
-            var selectedSize = (TaiyakiSizeEnum)selectedSizeRadioButton.Tag;
+            var selectedSize = (TaiyakiSizeType)selectedSizeRadioButton.Tag;
 
             try
             {

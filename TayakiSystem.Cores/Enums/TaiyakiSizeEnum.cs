@@ -3,7 +3,7 @@
     public enum TaiyakiSizeEnum
     {
         小 = 0,
-        中 = 50,
-        大 = 100
+        中,
+        大,
     }
 }

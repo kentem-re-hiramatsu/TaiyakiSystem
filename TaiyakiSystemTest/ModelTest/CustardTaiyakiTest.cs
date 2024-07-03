@@ -12,6 +12,9 @@ namespace TaiyakiSystemTest.ModelTest
         private CustardTaiyaki middleTaiyaki = new CustardTaiyaki(new MiddleSize());
         private CustardTaiyaki bigTaiyaki = new CustardTaiyaki(new BigSize());
 
+        /// <summary>
+        /// サイズのテスト
+        /// </summary>
         [TestMethod]
         public void SizeTest()
         {
@@ -20,6 +23,9 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size.Type);
         }
 
+        /// <summary>
+        /// 名前のテスト
+        /// </summary>
         [TestMethod]
         public void NameTest()
         {
@@ -28,6 +34,9 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiType.カスタードたい焼き, bigTaiyaki.Name);
         }
 
+        /// <summary>
+        /// 中身のテスト
+        /// </summary>
         [TestMethod]
         public void ContentTest()
         {
@@ -36,6 +45,9 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual("カスタード", bigTaiyaki.Content);
         }
 
+        /// <summary>
+        /// 値段のテスト
+        /// </summary>
         [TestMethod]
         public void PriceTest()
         {

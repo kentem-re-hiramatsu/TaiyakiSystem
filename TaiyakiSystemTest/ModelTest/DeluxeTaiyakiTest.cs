@@ -11,6 +11,9 @@ namespace TaiyakiSystemTest.ModelTest
     {
         private DeluxeTaiyaki bigTaiyaki = new DeluxeTaiyaki(new BigSize());
 
+        /// <summary>
+        /// サイズのテスト
+        /// </summary>
         [TestMethod]
         public void SizeTest()
         {
@@ -21,18 +24,27 @@ namespace TaiyakiSystemTest.ModelTest
             Assert.AreEqual(TaiyakiSizeType.大, bigTaiyaki.Size.Type);
         }
 
+        /// <summary>
+        /// 名前のテスト
+        /// </summary>
         [TestMethod]
         public void NameTest()
         {
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, bigTaiyaki.Name);
         }
 
+        /// <summary>
+        /// 中身のテスト
+        /// </summary>
         [TestMethod]
         public void ContentTest()
         {
             Assert.AreEqual("生クリームとカスタード", bigTaiyaki.Content);
         }
 
+        /// <summary>
+        /// 値段のテスト
+        /// </summary>
         [TestMethod]
         public void PriceTest()
         {

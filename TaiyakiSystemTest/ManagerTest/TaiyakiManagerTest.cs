@@ -14,6 +14,9 @@ namespace TaiyakiSystemTest.ManagerTest
         private MiddleSize middleSize = new MiddleSize();
         private BigSize bigSize = new BigSize();
 
+        /// <summary>
+        /// 追加と合計金額のテスト
+        /// </summary>
         [TestMethod]
         public void AddAndTotalPriceTest()
         {
@@ -47,6 +50,9 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(totalPrice, taiyakiMana.GetTotalPrice());
         }
 
+        /// <summary>
+        /// 削除のテスト
+        /// </summary>
         [TestMethod]
         public void RemoveTest()
         {
@@ -70,6 +76,9 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
         }
 
+        /// <summary>
+        /// 変更のテスト
+        /// </summary>
         [TestMethod]
         public void ChangeOrderTest()
         {
@@ -92,6 +101,7 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(TaiyakiType.デラックスたい焼き, taiyakiMana.GetTaiyakiOrder(1).Name);
             Assert.AreEqual(TaiyakiSizeType.大, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
 
+            //デラックスたい焼きのサイズは大のみのため小と中サイズはエラー
             Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, smallSize));
             Assert.ThrowsException<Exception>(() => taiyakiMana.ChangeOrder(1, middleSize));
         }

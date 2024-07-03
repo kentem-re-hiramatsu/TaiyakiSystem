@@ -22,16 +22,16 @@ namespace TaiyakiSystem.Cores.Managers
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 
-        public BaseTaiyaki GetTaiyaki(TaiyakiEnum taiyaki)
+        public BaseTaiyaki GetTaiyaki(TaiyakiEnum taiyaki, TaiyakiSizeEnum size)
         {
             switch (taiyaki)
             {
                 case TaiyakiEnum.通常たい焼き:
-                    return new DefaultTaiyaki();
+                    return new DefaultTaiyaki(size);
                 case TaiyakiEnum.カスタードたい焼き:
-                    return new CustardTaiyaki();
+                    return new CustardTaiyaki(size);
                 case TaiyakiEnum.デラックスたい焼き:
-                    return new DeluxeTaiyaki();
+                    return new DeluxeTaiyaki(size);
             }
             return null;
         }

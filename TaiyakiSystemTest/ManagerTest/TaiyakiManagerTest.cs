@@ -38,8 +38,8 @@ namespace TaiyakiSystemTest.ManagerTest
             Assert.AreEqual(smallSize.Type, taiyakiMana.GetTaiyakiOrder(1).Size.Type);
             Assert.AreEqual(bigSize.Type, taiyakiMana.GetTaiyakiOrder(2).Size.Type);
 
-            var custardTaiyakiPrice = new CustardTaiyaki(middleSize).TaiyakiPrice;
-            var defaultTaiyakiPrice = new DefaultTaiyaki(smallSize).TaiyakiPrice;
+            var custardTaiyakiPrice = new CustardTaiyaki(middleSize).TaiyakiPrice + middleSize.Price;
+            var defaultTaiyakiPrice = new DefaultTaiyaki(smallSize).TaiyakiPrice + smallSize.Price;
             var deluxeTaiyakiPrice = new DeluxeTaiyaki(bigSize).TaiyakiPrice;
 
             var totalPrice = custardTaiyakiPrice + defaultTaiyakiPrice + deluxeTaiyakiPrice;

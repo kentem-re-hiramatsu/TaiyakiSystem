@@ -64,7 +64,6 @@
             this.DeluxeRadioButton.TabStop = true;
             this.DeluxeRadioButton.Text = "デラックスたい焼き";
             this.DeluxeRadioButton.UseVisualStyleBackColor = true;
-            this.DeluxeRadioButton.CheckedChanged += new System.EventHandler(this.DeluxeRadioButton_CheckedChanged);
             // 
             // CustardRadioButton
             // 
@@ -76,7 +75,6 @@
             this.CustardRadioButton.TabStop = true;
             this.CustardRadioButton.Text = "カスタードたい焼き";
             this.CustardRadioButton.UseVisualStyleBackColor = true;
-            this.CustardRadioButton.CheckedChanged += new System.EventHandler(this.CustardRadioButton_CheckedChanged);
             // 
             // DefaultRadioButton
             // 
@@ -89,7 +87,6 @@
             this.DefaultRadioButton.TabStop = true;
             this.DefaultRadioButton.Text = "通常たい焼き";
             this.DefaultRadioButton.UseVisualStyleBackColor = true;
-            this.DefaultRadioButton.CheckedChanged += new System.EventHandler(this.DefaultRadioButton_CheckedChanged);
             // 
             // SizeGroupBox
             // 
@@ -113,7 +110,6 @@
             this.SmallRadioButton.TabStop = true;
             this.SmallRadioButton.Text = "小";
             this.SmallRadioButton.UseVisualStyleBackColor = true;
-            this.SmallRadioButton.CheckedChanged += new System.EventHandler(this.SmallRadioButton_CheckedChanged);
             // 
             // BigRadioButton
             // 
@@ -126,7 +122,6 @@
             this.BigRadioButton.TabStop = true;
             this.BigRadioButton.Text = "大";
             this.BigRadioButton.UseVisualStyleBackColor = true;
-            this.BigRadioButton.CheckedChanged += new System.EventHandler(this.BigRadioButton_CheckedChanged);
             // 
             // MiddleRadioButton
             // 
@@ -138,7 +133,6 @@
             this.MiddleRadioButton.TabStop = true;
             this.MiddleRadioButton.Text = "中";
             this.MiddleRadioButton.UseVisualStyleBackColor = true;
-            this.MiddleRadioButton.CheckedChanged += new System.EventHandler(this.MiddleRadioButton_CheckedChanged);
             // 
             // BuyButton
             // 

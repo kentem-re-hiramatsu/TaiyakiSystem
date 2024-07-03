@@ -29,6 +29,10 @@ namespace TaiyakiSystem
             BigRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.大;
             MiddleRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.中;
             SmallRadioButton.Checked = taiyaki.Size.Type == TaiyakiSizeType.小;
+
+            BigRadioButton.Tag = TaiyakiSizeType.大;
+            MiddleRadioButton.Tag = TaiyakiSizeType.中;
+            SmallRadioButton.Tag = TaiyakiSizeType.小;
         }
 
         private void BuyButton_Click(object sender, EventArgs e)

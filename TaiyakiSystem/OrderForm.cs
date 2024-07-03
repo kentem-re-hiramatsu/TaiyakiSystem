@@ -42,7 +42,7 @@ namespace TaiyakiSystem
 
             try
             {
-                var taiyaki = _taiyakiMana.GetTaiyaki(selectedTaiyaki, selectedSize);
+                var taiyaki = _taiyakiMana.GetTaiyaki(selectedTaiyaki, _taiyakiMana.GetSize(selectedSize));
                 _taiyakiMana.Add(taiyaki);
                 DialogResult = DialogResult.OK;
                 Close();

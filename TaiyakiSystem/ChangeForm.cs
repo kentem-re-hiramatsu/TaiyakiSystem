@@ -38,7 +38,7 @@ namespace TaiyakiSystem
 
             try
             {
-                _taiyakiMana.ChangeOrder(_selectedIndex, selectedSize);
+                _taiyakiMana.ChangeOrder(_selectedIndex, _taiyakiMana.GetSize(selectedSize));
                 DialogResult = DialogResult.OK;
                 Close();
             }

@@ -12,6 +12,9 @@ namespace TaiyakiSystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// たい焼きの注文リスト更新
+        /// </summary>
         private void UpdateScreen()
         {
             TaiyakiListView.Items.Clear();
@@ -22,6 +25,10 @@ namespace TaiyakiSystem
             PriceLabel.Text = $"{_taiyakiMana.GetTotalPrice().ToString("#,0円")}";
         }
 
+        /// <summary>
+        /// リストビューで選択されたインデックスを返す
+        /// </summary>
+        /// <returns></returns>
         private int GetSelectedIndex()
         {
             if (TaiyakiListView.SelectedItems.Count > 0)
@@ -31,6 +38,9 @@ namespace TaiyakiSystem
             return -1;
         }
 
+        /// <summary>
+        /// 削除ボタンと変更ボタンの活性状態を変更
+        /// </summary>
         private void RemoveAndChangeButtonActiveStateChange()
         {
             RemoveButton.Enabled = TaiyakiListView.SelectedItems.Count > 0;

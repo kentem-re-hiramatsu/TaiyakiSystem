@@ -34,9 +34,11 @@ namespace TaiyakiSystem
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
+            //たい焼きのチェック状態を取得
             var selectedTaiyakiRadioButton = MenuGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
             var selectedTaiyaki = (TaiyakiType)selectedTaiyakiRadioButton.Tag;
 
+            //サイズのチェック状態を取得
             var selectedSizeRadioButton = SizeGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
             var selectedSize = (TaiyakiSizeType)selectedSizeRadioButton.Tag;
 

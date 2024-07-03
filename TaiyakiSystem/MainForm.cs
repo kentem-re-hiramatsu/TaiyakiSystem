@@ -6,7 +6,6 @@ namespace TaiyakiSystem
     public partial class MainForm : Form
     {
         private TaiyakiManager _taiyakiMana = new TaiyakiManager();
-        private int _selectedIndex;
 
         public MainForm()
         {
@@ -23,12 +22,13 @@ namespace TaiyakiSystem
             PriceLabel.Text = $"{_taiyakiMana.GetTotalPrice().ToString("#,0円")}";
         }
 
-        private void SelectedIndex()
+        private int GetSelectedIndex()
         {
             if (TaiyakiListView.SelectedItems.Count > 0)
             {
-                _selectedIndex = TaiyakiListView.SelectedItems[0].Index;
+                return TaiyakiListView.SelectedItems[0].Index;
             }
+            return -1;
         }
 
         private void RemoveAndChangeButtonActiveStateChange()
@@ -53,14 +53,14 @@ namespace TaiyakiSystem
 
         private void RemoveButton_Click(object sender, System.EventArgs e)
         {
-            _taiyakiMana.Remove(_selectedIndex);
+            _taiyakiMana.Remove(GetSelectedIndex());
             UpdateScreen();
             RemoveAndChangeButtonActiveStateChange();
         }
 
         private void ChangeButton_Click(object sender, System.EventArgs e)
         {
-            if (new ChangeForm(_taiyakiMana, _selectedIndex).ShowDialog() == DialogResult.OK)
+            if (new ChangeForm(_taiyakiMana, GetSelectedIndex()).ShowDialog() == DialogResult.OK)
             {
                 UpdateScreen();
             }
@@ -69,7 +69,6 @@ namespace TaiyakiSystem
 
         private void TaiyakiListView_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            SelectedIndex();
             RemoveAndChangeButtonActiveStateChange();
         }
     }

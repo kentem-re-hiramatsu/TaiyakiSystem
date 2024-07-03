@@ -1,4 +1,5 @@
 ﻿using TaiyakiSystem.Cores.Enums;
+using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystem.Cores.Models
 {
@@ -8,19 +9,14 @@ namespace TaiyakiSystem.Cores.Models
         private const int PRICE = 150;
         private const string CONTENT = "カスタード";
 
-        public CustardTaiyaki(TaiyakiSizeType size)
+        public CustardTaiyaki(Size size)
         {
             Name = NAME;
             TaiyakiPrice = PRICE;
             Content = CONTENT;
             Size = size;
-            SizePrice = GetSizePrice(size);
         }
 
-        public CustardTaiyaki() { }
-
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeType size) => new CustardTaiyaki(size);
-
-        public override int GetSubTotal() => TaiyakiPrice + SizePrice;
+        public override int GetSubTotal() => TaiyakiPrice + Size.Price;
     }
 }

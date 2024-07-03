@@ -1,5 +1,6 @@
 ﻿using System;
 using TaiyakiSystem.Cores.Enums;
+using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystem.Cores.Models
 {
@@ -9,25 +10,20 @@ namespace TaiyakiSystem.Cores.Models
         private const int PRICE = 300;
         private const string CONTENT = "生クリームとカスタード";
 
-        public DeluxeTaiyaki(TaiyakiSizeType size)
+        public DeluxeTaiyaki(Size size)
         {
-            if (TaiyakiSizeType.大 == size)
+            if (TaiyakiSizeType.大 == size.Type)
             {
                 Name = NAME;
                 TaiyakiPrice = PRICE;
                 Content = CONTENT;
                 Size = size;
-                SizePrice = GetSizePrice(size);
             }
             else
             {
                 throw new Exception(Consts.BIG_SIZE_ONLY_ERROR_MESSAGE);
             }
         }
-
-        public DeluxeTaiyaki() { }
-
-        public override BaseTaiyaki GetCloneTaiyaki(TaiyakiSizeType size) => new DeluxeTaiyaki(size);
 
         public override int GetSubTotal() => TaiyakiPrice;
     }

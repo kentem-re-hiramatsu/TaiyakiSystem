@@ -2,6 +2,7 @@
 using System.Linq;
 using TaiyakiSystem.Cores.Enums;
 using TaiyakiSystem.Cores.Models;
+using TayakiSystem.Cores.Models;
 
 namespace TaiyakiSystem.Cores.Managers
 {
@@ -16,13 +17,13 @@ namespace TaiyakiSystem.Cores.Managers
 
         public int GetTotalPrice() => _taiyakiOrderList.Sum(x => x.GetSubTotal());
 
-        public void ChangeOrder(int index, TaiyakiSizeType size)
+        public void ChangeOrder(int index, Size size)
         {
             _taiyakiOrderList[index].Size = size;
         }
         public void Remove(int index) => _taiyakiOrderList.RemoveAt(index);
 
-        public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, TaiyakiSizeType size)
+        public BaseTaiyaki GetTaiyaki(TaiyakiType taiyaki, Size size)
         {
             switch (taiyaki)
             {
@@ -32,6 +33,20 @@ namespace TaiyakiSystem.Cores.Managers
                     return new CustardTaiyaki(size);
                 case TaiyakiType.デラックスたい焼き:
                     return new DeluxeTaiyaki(size);
+            }
+            return null;
+        }
+
+        public Size GetSize(TaiyakiSizeType size)
+        {
+            switch (size)
+            {
+                case TaiyakiSizeType.大:
+                    return new BigSize();
+                case TaiyakiSizeType.中:
+                    return new MiddleSize();
+                case TaiyakiSizeType.小:
+                    return new SmallSize();
             }
             return null;
         }
